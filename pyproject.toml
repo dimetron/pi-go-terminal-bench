@@ -3,7 +3,7 @@ name = "pi-terminal-bench"
 version = "0.1.0"
 description = "Harbor agent adapter for pi coding agent to run Terminal-Bench evaluations"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = [
     "harbor>=0.1.0",
 ]

@@ -55,7 +55,7 @@ class PiAgent(BaseInstalledAgent):
         model_args = ""
         if self.model_name:
             provider, model = self._parse_model_name(self.model_name)
-            model_args = f"--provider {provider} --model {model}"
+            model_args = f" --model {model} --url "
 
         output_dir = EnvironmentPaths.agent_dir
         session_file = output_dir / "session.jsonl"
@@ -68,7 +68,7 @@ class PiAgent(BaseInstalledAgent):
             ),
             ExecInput(
                 command=(
-                    f"pi --print --mode json --session {session_file} "
+                    f"pi --mode jsonp"
                     f"{model_args} "
                     f"{escaped_instruction} "
                     f"2>&1 | tee {json_output_file}"

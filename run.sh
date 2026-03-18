@@ -16,12 +16,13 @@ if ! docker info > /dev/null 2>&1; then
 fi
 
 # Activate venv
+uv sync
 source .venv/bin/activate
 
 # Run Terminal-Bench with pi agent
-harbor run \
+uv run harbor run \
   -d terminal-bench@2.0 \
-  --agent-import-path pi_terminal_bench:PiAgent \
+  --agent-import-path pi_terminal_bench:PiAgentGo \
   -m anthropic/claude-opus-4-5 \
   --n-attempts 5 \
   --jobs-dir "./pi-tbench-results" \
