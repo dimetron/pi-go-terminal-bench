@@ -22,7 +22,7 @@ source .venv/bin/activate
 # Run Terminal-Bench with pi agent
 uv run harbor run \
   -d terminal-bench@2.0 \
-  --agent-import-path pi_terminal_bench:PiAgentGo \
+  --agent-import-path pi_terminal_bench:PiAgent \
   -m anthropic/claude-opus-4-5 \
   --n-attempts 5 \
   --jobs-dir "./pi-tbench-results" \
